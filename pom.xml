@@ -14,7 +14,7 @@
 	<name>ecommerce</name>
 	<description>Demo Spring boot project for E commerce</description>
 	<properties>
-		<java.version>11</java.version>
+		<java.version>16</java.version>
 		<spring-native.version>0.10.0-SNAPSHOT</spring-native.version>
 	</properties>
 	<dependencies>

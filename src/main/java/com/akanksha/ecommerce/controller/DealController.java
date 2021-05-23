@@ -19,6 +19,7 @@ public class DealController {
         this.dealService = dealService;
     }
 
+    @CrossOrigin
     @GetMapping(path = "active")
     public List<Deal> getAllActiveDeals() {
         return dealService.getAllActiveDeals();

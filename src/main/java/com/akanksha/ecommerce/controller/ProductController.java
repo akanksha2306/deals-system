@@ -46,7 +46,17 @@ public class ProductController {
     public Product addProduct(@RequestBody ProductDto productDto) {
 
         Category category = categoryService.getById(productDto.getCategoryId());
-        Product product = new Product(productDto.getName(), productDto.getPrice(), category);
+
+        String productImage = productDto.getProductImage();
+
+        if (productImage.isEmpty()) {
+            productImage = "https://images.unsplash.com/photo-1577705998148-6da4f3963bc8?ixid=" +
+                    "MnwxMjA3fDB8MHxzZWFyY2h8MXx8Ym94fGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1";
+        }
+
+
+        Product product = new Product(productDto.getName(), productDto.getPrice(),
+                category, productImage);
 
         return productService.addProduct(product);
     }

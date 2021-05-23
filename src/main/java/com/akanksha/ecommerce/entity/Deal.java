@@ -22,9 +22,6 @@ public class Deal {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-//    private java.sql.Time dealStartTime;
-//    private java.sql.Time dealExpireTime;
-
     @Temporal(TemporalType.TIMESTAMP)
     Date dealStartTime;
 

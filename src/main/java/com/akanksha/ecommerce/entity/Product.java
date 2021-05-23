@@ -31,6 +31,7 @@ public class Product {
 
     private String name;
     private Integer price;
+    private String productImage;
 
     @ManyToOne(optional = false, cascade = CascadeType.DETACH)
     @JoinColumn(name = "categoryId", referencedColumnName = "id", nullable = false)
@@ -40,17 +41,19 @@ public class Product {
     @JsonIgnore
     private Set<Deal> deals;
 
-    public Product(String name, Integer price, Category category) {
+    public Product(String name, Integer price, Category category, String productImage) {
         this.name = name;
         this.price = price;
         this.category = category;
+        this.productImage = productImage;
     }
 
-    public Product(long id, String name, Integer price, Category category) {
+    public Product(long id, String name, Integer price, Category category, String productImage) {
         this.id = id;
         this.name = name;
         this.price = price;
         this.category = category;
+        this.productImage = productImage;
     }
 
     public Product() {

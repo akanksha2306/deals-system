@@ -36,9 +36,9 @@ public class DealService {
 
         // fetch random products
         List<Product> products = productRepository.pickItemsRandomly(count);
-        //run a for loop to create deals from product, and save them to DB
-
         List<Deal> deals = new ArrayList<>();
+
+        //run a for loop to create deals from product, and save them to DB
 
         for (Product prd : products) {
             Deal deal = new Deal(prd, getRandomNumber(10, 20), validityInMinutes);
